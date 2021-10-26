@@ -1,0 +1,197 @@
+
+<form [formGroup]="service.subscriberForm" *ngIf="service.subscriberForm" autocomplete="off" (submit)="onSubmit()">
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group" >
+                <label>الاسم بالعربي</label>
+                <input type="text" class="form-control" formControlName="SubscriberNameAr" [class.is-invalid]="(submitted ||f.SubscriberNameAr.touched)&& f.SubscriberNameAr.errors">
+            <div class="text-danger" *ngIf="(submitted ||f.SubscriberNameAr.touched)&& f.SubscriberNameAr.errors">
+                من فضلك ادخل الاسم   بالعربي
+            </div>
+            </div>
+
+            <div class="form-group" >
+                <label>الاسم بالانجليزي</label>
+                <input type="text" class="form-control" formControlName="SubscriberNameEn" [class.is-invalid]="(submitted ||f.SubscriberNameEn.touched)&& f.SubscriberNameEn.errors">
+            <div class="text-danger" *ngIf="(submitted ||f.SubscriberNameEn.touched)&& f.SubscriberNameEn.errors">
+                من فضلك ادخل الاسم   بالانجليزي
+            </div>
+            </div>
+
+            <div class="form-group" *ngIf="data.SubscriberFlagId==1">
+    <label>  النوع </label>
+    <ng-select formControlName="GenderId"  [items]="(genderList$|async)" 
+    bindLabel="GenderDesc"
+    bindValue="GenderId"
+    placeholder="من فضلك اختر النوع   "        
+  >
+  </ng-select>
+  <div class="text-danger" *ngIf="(submitted || f.GenderId.touched) && f.GenderId.errors">
+    من فضلك ادخل   النوع  
+    </div>
+</div>
+
+<div class="form-group" >
+    <label> رقم التليفون</label>
+    <input type="text" class="form-control" formControlName="SubscriberPhone" [class.is-invalid]="(submitted ||f.SubscriberPhone.touched)&& f.SubscriberPhone.errors">
+<div class="text-danger" *ngIf="(submitted ||f.SubscriberPhone.touched)&& f.SubscriberPhone.errors">
+    من فضلك ادخل رقم التليفون   
+</div>
+</div>
+        </div>
+
+        <div class="col-md-4">
+<div class="form-group" *ngIf="data.SubscriberFlagId==1">
+    <label>تاريخ الميلاد</label>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput formControlName="BirthDate" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="text-danger" *ngIf="(submitted || f.BirthDate.touched) && f.BirthDate.errors">
+        من فضلك ادخل   تاريخ الميلاد  
+        </div>
+</div>
+
+
+            <div class="form-group">
+                <label> اسم المحافظه</label>
+                <ng-select formControlName="GovernorateId"  [items]="(governmentList$|async)" 
+                bindLabel="GovernorateDesc"
+                bindValue="GovernorateId"
+                placeholder="من فضلك اختر  اسم المحافظه "        
+              >
+              </ng-select>
+              <div class="text-danger" *ngIf="(submitted || f.GovernorateId.touched) && f.GovernorateId.errors">
+                من فضلك ادخل   اسم  المحافظه
+                </div>
+            </div>
+        
+        
+                <div class="form-group">
+                  <label>اسم المدينه</label>
+                  <input type="text" class="form-control" formControlName="Town" [class.is-invalid]="(submitted ||f.Town.touched)&& f.Town.errors">
+              <div class="text-danger" *ngIf="(submitted ||f.Town.touched)&& f.Town.errors">
+                  من فضلك ادخل اسم الوظيفه  
+              </div>
+              </div>
+        
+              <div class="form-group">
+                <label>اسم الشارع</label>
+                <input type="text" class="form-control" formControlName="Village" [class.is-invalid]="(submitted ||f.Village.touched)&& f.Village.errors">
+            <div class="text-danger" *ngIf="(submitted ||f.Village.touched)&& f.Village.errors">
+                من فضلك ادخل اسم الشارع  
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group" *ngIf="data.SubscriberFlagId==1">
+                <label> اسم المستوي </label>
+                <ng-select formControlName="LevelId"  [items]="(levelsList$|async)" 
+                bindLabel="LevelDesc"
+                bindValue="LevelId"
+                placeholder="من فضلك اختر اسم المستوي  "        
+              >
+              </ng-select>
+              <div class="text-danger" *ngIf="(submitted || f.LevelId.touched) && f.LevelId.errors">
+                من فضلك ادخل   اسم المستوي 
+                </div>
+            </div>
+
+            <div class="form-group">
+          <label>اللغه</label>
+                <ng-select formControlName="LanguageId"  [items]="(languageList$|async)" 
+                bindLabel="LanguageDescr"
+                bindValue="LanguageId"
+                placeholder="من فضلك اختر   اللغه "        
+              >
+              </ng-select>
+              <div class="text-danger" *ngIf="(submitted || f.LanguageId.touched) && f.LanguageId.errors">
+            من فضلك اختر اللغة
+                    </div>
+            </div>
+
+            <div class="form-group" *ngIf=" data.SubscriberFlagId==1">
+                <label>المجموعه</label>
+                      <ng-select formControlName="SubscriberFlag"  (change)="changeSubscriberFlag($event)" [items]="(subscriberFlagList$|async)" 
+                      bindLabel="SubscriberFlagDesc"
+                      bindValue="SubscriberFlagId"
+                      placeholder="من فضلك اختر   المجموعه "        
+                    >
+                    </ng-select>
+                    <div class="text-danger" *ngIf="(submitted || f.SubscriberFlag.touched) && f.SubscriberFlag.errors">
+                  من فضلك اختر المجموعه
+                          </div>
+                  </div>
+
+
+                  <div class="form-group" *ngIf=" data.SubscriberFlagId==1">
+                    <label>الاسم</label>
+                          <ng-select formControlName="SubscriberIdFrom" [items]="(subScriberList$|async)" 
+                          bindLabel="SubscriberNameAr"
+                          bindValue="SubscriberId"
+                          placeholder="من فضلك اختر   الاسم "        
+                        >
+                        </ng-select>
+                        <div class="text-danger" *ngIf="(submitted || f.SubscriberIdFrom.touched) && f.SubscriberIdFrom.errors">
+                      من فضلك اختر الاسم
+                              </div>
+                      </div>
+            
+
+          
+
+                  <div class="form-group" *ngIf="data.SubscriberFlagId==2" >
+                    <label>اسم المعلم  </label>
+                    <input type="text" class="form-control" formControlName="SubscriberTeacherName" [class.is-invalid]="(submitted ||f.SubscriberTeacherName.touched)&& f.SubscriberTeacherName.errors">
+                <div class="text-danger" *ngIf="(submitted ||f.SubscriberTeacherName.touched)&& f.SubscriberTeacherName.errors">
+                    من فضلك ادخل اسم المعلم   
+                </div>
+                </div>
+
+              <!--
+  <div class="form-group" *ngIf="data.SubscriberFlagId==2 || data.SubscriberFlagId==3 || data.SubscriberFlagId==4" >
+                    <label> عدد الطلاب</label>
+                    <input type="text" class="form-control" formControlName="SubscriberNumber" [class.is-invalid]="(submitted ||f.SubscriberNumber.touched)&& f.SubscriberNumber.errors">
+                <div class="text-danger" *ngIf="(submitted ||f.SubscriberNumber.touched)&& f.SubscriberNumber.errors">
+                    من فضلك ادخل عدد الطلاب    
+                </div>
+                </div>
+              -->
+
+              
+
+                <div class="form-group"  *ngIf="data.SubscriberFlagId==1" >
+                    <label>صوره الطالب </label>
+                   <input type="file"   accept="image/*" (change)="onFileSelect($event)" name="Path" [class.is-invalid]="(submitted ||f.Path.touched)&& f.Path.errors">
+                <div class="text-danger" *ngIf="(submitted ||f.Path.touched)&& f.Path.errors">
+                    من فضلك ادخل  صوره الطالب  
+                </div>
+                </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+  
+
+
+
+
+<div class="form-group">
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+</div>
+            <div class="form-group">
+                <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+            </div>
+</form>

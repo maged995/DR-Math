@@ -1,0 +1,85 @@
+<form [formGroup]="service.orderDetailForm" *ngIf="service.orderDetailForm" autocomplete="off">
+    <div class="row">
+      <div class="col-md-6">
+ 
+      <div class="form-group" >
+        <label>نوع الصنف </label>
+        <ng-select formControlName="ItemFlagId" (change)="changeFlag($event)"  [items]="(ItemFlagList$|async)" 
+        bindLabel="ItemFlagDesc"
+        bindValue="ItemFlagId"
+        placeholder="من فضلك اختر  نوع الصنف"        
+      >
+      </ng-select>
+      <div class="text-danger" *ngIf="(submitted || f.ItemFlagId.touched) && f.ItemFlagId.errors">
+        من فضلك ادخل  نوع الصنف
+        </div>
+    </div>
+    
+    
+    <div class="form-group">
+      <label>اسم الصنف</label>
+      <ng-select formControlName="ItemId" (change)="changeItems($event)"  [items]="(ItemList$|async)" 
+      bindLabel="ItemDesc"
+      bindValue="ItemId"
+      placeholder="من فضلك اختر اسم المنتج"        
+    >
+    </ng-select>
+    <div class="text-danger" *ngIf="(submitted || f.ItemId.touched) && f.ItemId.errors">
+      من فضلك ادخل اسم المنتج
+      </div>
+    </div>
+    
+ 
+      </div>
+   
+    <div class="col-md-6">
+    
+    
+     
+      <div class="form-group">
+        <label>الكميه</label>
+        <input type="text"  class="form-control" (keyup)="getTotal()" formControlName="ItemQuantity" [class.is-invalid]="(submitted ||f.ItemQuantity.touched)&& f.ItemQuantity.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.ItemQuantity.touched)&& f.ItemQuantity.errors">
+     
+      <div *ngIf="f.ItemQuantity.errors">
+        من فضلك ادخل  الكميه  
+      </div>
+      
+    </div>
+    </div>
+    
+    <div class="form-group">
+      <label>السعر</label>
+      <input type="text"  disabled="disabled" class="form-control" (keyup)="getTotal()" formControlName="ItemPrice" [class.is-invalid]="(submitted ||f.ItemPrice.touched)&& f.ItemPrice.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.ItemPrice.touched)&& f.ItemPrice.errors">
+    
+    <div *ngIf="f.ItemPrice.errors">
+      من فضلك ادخل السعر  
+    </div>
+    
+    </div>
+    </div>
+    
+    
+    <div class="form-group" >
+      <label>الاجمالي  </label>
+      <input type="text" disabled="disabled"  class="form-control" formControlName="ItemTotalPrice" >
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    <div class="form-group">
+    <input type="button" value="submit" (click)="onsubmit()" class="btn btn-success">
+    &nbsp;&nbsp;&nbsp;
+    <input type="button" value="close" class="btn btn-danger" (click)="onClose()">
+    </div>
+    
+    
+    
+    </form>
+    
+    
+    
+    

@@ -1,0 +1,91 @@
+<div>
+    <mat-toolbar>
+        <span class="example-fill-remaining-space"></span>
+      <span>طلب اوردور</span>
+          <span class="example-fill-remaining-space"></span>
+        
+      </mat-toolbar>
+      
+      
+      
+      
+      <form  [formGroup]="service.ordersForm" *ngIf="service.ordersForm" >
+    
+       
+        <div class="form-group">
+            <label>  اجمالي سعر الاوردور </label>
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">$</div>
+            </div>
+            <input type="number" min="0"  disabled="disabled" formControlName="OrderTotalValue" class="form-control">
+          </div>
+        
+        </div>
+
+
+
+            <table class="table table-borderless">
+        <thead class="thead-light">
+          <th>نوع الصنف  </th>
+          <th>اسم الصنف</th>
+          <th>الكميه</th>
+          <th>السعر</th>
+          <th>الاجمالي</th>
+       
+          <th>
+          
+                  <a  class="btn text-white btn-primary" *ngIf="!submitNow " (click)="addOrEdit(null)">
+                          <mat-icon aria-hidden="false" aria-label="icon">add</mat-icon>
+                      </a>           
+              
+            </th>
+        </thead>
+        <tbody>
+          <tr *ngIf="service.OrderDetailList.length==0" >
+            <td [class.text-danger]=" service.OrderDetailList.length==0" colspan="2" class="text-center">
+                من فضلك ادخل الاصناف
+            </td>
+           
+          </tr>
+          <tr *ngFor="let item of service.OrderDetailList;let i=index;">
+              <td>{{item.ItemFlagDesc}}</td>
+            <td>{{item.ItemDesc}}</td>
+            <td>{{item.ItemQuantity}}</td>
+            <td>{{item.ItemPrice}}</td>
+            <td>{{item.ItemTotalPrice}}</td>
+          
+      <td>
+   
+        <a class="btn btn-warning text-white" *ngIf="!submitNow " (click)="addOrEdit(i)">Edit</a>
+          &nbsp;&nbsp;
+          <a  class="btn btn-danger text-white" *ngIf="!submitNow " (click)="onDelete(i)">Delete</a>
+          <a *ngIf="submitNow && item.ItemFlagId==7 && item.Subscriber " class="btn btn-primary text-white"  (click)="onSerial(i,item.ItemQuantity,item.ItemId)">اسماء الطلاب({{item.ItemQuantity}})</a>
+
+        
+        </td>
+          
+        </tr>
+
+        </tbody>
+      </table>
+    
+   
+    
+       
+         
+      
+            <div class="form-group">
+              <button *ngIf="!submitNow " (click)="onSaveDetail()" class="btn btn-primary">حفظ تفاصيل الفاتوره</button>
+              <input *ngIf="submitNow"  type="button"  (click)="onSubmit()"  value="Submit" class="btn btn-dark" >
+        &nbsp;&nbsp;
+            </div>
+      
+          
+        </form>
+    
+        </div>
+        
+      
+      
+      

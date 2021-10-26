@@ -1,0 +1,77 @@
+
+<form [formGroup]="service.subscriberAdd" *ngIf="service.subscriberAdd" autocomplete="off" (submit)="onSubmit()">
+
+
+    <div class="row">
+        <div class="col-md-6">
+       
+          
+
+            <div class="form-group" >
+    <label>  الاسم </label>
+    <ng-select formControlName="SubscriberId"  [items]="(subScriberList$|async)" 
+    bindLabel="SubscriberNameAr"
+    bindValue="SubscriberId"
+    placeholder="من فضلك اختر الاسم   "        
+  >
+  </ng-select>
+  <div class="text-danger" *ngIf="(submitted || f.SubscriberId.touched) && f.SubscriberId.errors">
+    من فضلك ادخل   الاسم  
+    </div>
+</div>
+
+
+
+        </div>
+
+   
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label> اسم المستوي </label>
+                <ng-select formControlName="LevelId"  [items]="(levelsList$|async)" 
+                bindLabel="LevelDesc"
+                bindValue="LevelId"
+                placeholder="من فضلك اختر اسم المستوي  "        
+              >
+              </ng-select>
+              <div class="text-danger" *ngIf="(submitted || f.LevelId.touched) && f.LevelId.errors">
+                من فضلك ادخل   اسم المستوي 
+                </div>
+            </div>
+
+
+              <!--
+  <div class="form-group" *ngIf="data.SubscriberFlagId==2 || data.SubscriberFlagId==3 || data.SubscriberFlagId==4" >
+                    <label> عدد الطلاب</label>
+                    <input type="text" class="form-control" formControlName="SubscriberNumber" [class.is-invalid]="(submitted ||f.SubscriberNumber.touched)&& f.SubscriberNumber.errors">
+                <div class="text-danger" *ngIf="(submitted ||f.SubscriberNumber.touched)&& f.SubscriberNumber.errors">
+                    من فضلك ادخل عدد الطلاب    
+                </div>
+                </div>
+              -->
+
+              
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+  
+
+
+
+
+<div class="form-group">
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+</div>
+            <div class="form-group">
+                <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+            </div>
+</form>

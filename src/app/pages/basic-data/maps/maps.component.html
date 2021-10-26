@@ -1,0 +1,238 @@
+<div style="height: 5vh;">
+  <div *ngIf="TrainerValid" class="form-group">
+    <label>اسم المدرب</label>
+    <ng-select  (change)="changeTrainer($event)"  [items]="(trainerList$|async)" 
+    bindLabel="TrainerName"
+    bindValue="TrainerId"
+    placeholder="من فضلك اختر اسم المدرب"        
+  >
+  </ng-select>
+
+</div>
+</div>
+<div  *ngIf="!TrainerValid" >
+  <button *ngIf="Type=='mapsByTrainer'" class="btn btn-primary" (click)="onReturn()" >رجوع</button>
+  <table class="table table-bordered" style="height: 5vh;">
+    <tr>
+      <td>عدد الكورسات</td>
+      <td>{{courses}}</td>
+      <td>عدد الحضانات</td>
+      <td>{{Incubations}}</td>
+      <td>عدد المدارس</td>
+      <td>{{Schools}}</td>
+    </tr>
+  </table>
+  
+  <mat-tab-group dir="rtl">
+    <mat-tab label="خرائط"> 
+      
+<agm-map  style="display: block; height: 60vh;"
+
+  [latitude]=31.02
+   [longitude]=30.28
+   [fullscreenControl]='true'
+   [mapTypeControl]="true"
+   [scrollwheel]="false"
+   >
+   <agm-marker *ngFor="let item of SubscribersList" [latitude]="item.latitude" [longitude]="item.Longitude" [title]="item.SubscriberNameAr" [label]="item.SubscriberNameAr" >
+    <agm-info-window>
+      <label>الاسم بالعربي<p>{{item.SubscriberNameAr}}</p></label>
+      <label>الاسم بالانجليزي<p>{{item.SubscriberNameEn}}</p></label>
+      <label>النوع<p>{{item.SubscriberFlagDesc}}</p></label>
+      <label>عدد الطلاب<p>{{item.Students}}</p></label>
+    </agm-info-window>
+   </agm-marker>
+ </agm-map>
+ 
+    
+ </mat-tab>
+ <mat-tab label="جدول توضيحي">
+  <div id="demo">
+    
+      
+      <div dir="rtl" >
+      
+      <table dir="rtl" class="table table-bordered table-hover">
+
+   
+      <thead style="text-align: right">
+        <th>الاسم بالعربي</th>
+        <th>الاسم بالانجليزي</th>
+        <th>النوع</th>
+        <th>عدد الطلاب</th>
+        <th>المحافظه</th>
+        <th>المدينه</th>
+        <th>البلد</th>
+      </thead>
+      <tbody style="text-align: right">
+        <tr *ngFor="let item of SubscribersList">
+<td>{{item.SubscriberNameAr}}</td>
+<td>{{item.SubscriberNameEn}}</td>
+<td>{{item.SubscriberFlagDesc}}</td>  
+<td>{{item.Students}}</td>
+<td>{{item.GovernorateDesc}}</td>
+<td>{{item.Town}}</td>
+<td>{{item.Village}}</td>
+</tr>
+      </tbody>
+    </table> 
+      </div>
+   
+      </div>
+      
+      <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+ </mat-tab>
+
+ <mat-tab label="الطلاب " *ngIf="Type!='mapsGovernorate'">
+  <div id="demo">
+    
+      
+      <div dir="rtl" >
+      
+      <table dir="rtl" class="table table-bordered table-hover">
+
+   
+      <thead style="text-align: right">
+        <th>الاسم بالعربي</th>
+        <th>الاسم بالانجليزي</th>
+        <th>النوع</th>
+        <th> رقم التليفون</th>
+        <th>تاريخ الميلاد</th>
+        <th>المحافظه</th>
+        <th>المدينه</th>
+        <th>البلد</th>
+        <th>اسم المستوي</th>
+        <th>اللغه</th>
+        <th>المجموعه</th>
+        <th>اسم المجموعه</th>
+        <th>اسم المدرب</th>
+      </thead>
+      <tbody style="text-align: right">
+        <tr *ngFor="let item of Students">
+<td>{{item.SubscriberNameAr}}</td>
+<td>{{item.SubscriberNameEn}}</td>
+<td>{{item.GenderDesc}}</td>
+<td>{{item.SubscriberPhone}}</td>  
+<td>{{item.BirthDate |date}}</td>
+<td>{{item.GovernorateDesc}}</td>
+<td>{{item.Town}}</td>
+<td>{{item.Village}}</td>
+<td>{{item.LevelDesc}}</td>
+<td>{{item.LanguageDescr}}</td>
+<td>{{item.SubscriberFlagDesc}}</td>
+<td>{{item.Group}}</td>
+<td>{{item.TrainerName}}</td>
+<td>
+  <button *ngIf="Type=='mapsByTrainer'" class="btn btn-primary" (click)="onCard(item.SubscriberLevelId)" >طباعة كارت</button>
+
+</td>
+</tr>
+      </tbody>
+    </table> 
+      </div>
+   
+      </div>
+      
+      <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+ </mat-tab>
+
+ <mat-tab label="الطلاب المنقطعين"  *ngIf="Type!='mapsGovernorate'">
+  <div id="demo">
+    
+      
+      <div dir="rtl" >
+      
+      <table dir="rtl" class="table table-bordered table-hover">
+
+   
+      <thead style="text-align: right">
+        <th>الاسم بالعربي</th>
+        <th>الاسم بالانجليزي</th>
+        <th>النوع</th>
+        <th> رقم التليفون</th>
+        <th>تاريخ الميلاد</th>
+        <th>المحافظه</th>
+        <th>المدينه</th>
+        <th>البلد</th>
+        <th>اسم المستوي</th>
+        <th>اللغه</th>
+        <th>المجموعه</th>
+        <th>اسم المجموعه</th>
+        <th>اسم المدرب</th>
+      </thead>
+      <tbody style="text-align: right">
+        <tr *ngFor="let item of StudentsIsClosed">
+<td>{{item.SubscriberNameAr}}</td>
+<td>{{item.SubscriberNameEn}}</td>
+<td>{{item.GenderDesc}}</td>
+<td>{{item.SubscriberPhone}}</td>  
+<td>{{item.BirthDate |date}}</td>
+<td>{{item.GovernorateDesc}}</td>
+<td>{{item.Town}}</td>
+<td>{{item.Village}}</td>
+<td>{{item.LevelDesc}}</td>
+<td>{{item.LanguageDescr}}</td>
+<td>{{item.SubscriberFlagDesc}}</td>
+<td>{{item.Group}}</td>
+<td>{{item.TrainerName}}</td>
+</tr>
+      </tbody>
+    </table> 
+      </div>
+   
+      </div>
+      
+      <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+ </mat-tab>
+
+ <mat-tab label="الطلاب المحذوفين "  *ngIf="Type!='mapsGovernorate'">
+  <div id="demo">
+    
+      
+      <div dir="rtl" >
+      
+      <table dir="rtl" class="table table-bordered table-hover">
+
+   
+      <thead style="text-align: right">
+        <th>الاسم بالعربي</th>
+        <th>الاسم بالانجليزي</th>
+        <th>النوع</th>
+        <th> رقم التليفون</th>
+        <th>تاريخ الميلاد</th>
+        <th>المحافظه</th>
+        <th>المدينه</th>
+        <th>البلد</th>
+        <th>اسم المستوي</th>
+        <th>اللغه</th>
+        <th>المجموعه</th>
+        <th>اسم المجموعه</th>
+        <th>اسم المدرب</th>
+      </thead>
+      <tbody style="text-align: right">
+        <tr *ngFor="let item of StudentsNotActive">
+<td>{{item.SubscriberNameAr}}</td>
+<td>{{item.SubscriberNameEn}}</td>
+<td>{{item.GenderDesc}}</td>
+<td>{{item.SubscriberPhone}}</td>  
+<td>{{item.BirthDate |date}}</td>
+<td>{{item.GovernorateDesc}}</td>
+<td>{{item.Town}}</td>
+<td>{{item.Village}}</td>
+<td>{{item.LevelDesc}}</td>
+<td>{{item.LanguageDescr}}</td>
+<td>{{item.SubscriberFlagDesc}}</td>
+<td>{{item.Group}}</td>
+<td>{{item.TrainerName}}</td>
+</tr>
+      </tbody>
+    </table> 
+      </div>
+   
+      </div>
+      
+      <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+ </mat-tab>
+ 
+  </mat-tab-group>
+</div>

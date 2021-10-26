@@ -1,0 +1,366 @@
+
+<form [formGroup]="service.formReport" *ngIf="service.formReport" autocomplete="off" (submit)="onSubmit()">
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group" >
+            <label> تاريخ البدايه</label>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput formControlName="FirstDate" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        
+              <div class="text-danger" *ngIf="(submitted || f.FirstDate.touched) && f.FirstDate.errors">
+                من فضلك ادخل   تاريخ الميلاد  
+                </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group" >
+            <label> تاريخ النهايه</label>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput formControlName="EndDate" [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+        
+              <div class="text-danger" *ngIf="(submitted || f.EndDate.touched) && f.EndDate.errors">
+    من فضلك ادخل تاريخ النهايه
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        
+<div class="form-group"  >
+    <label>اسم المدرب</label>
+    <br/>
+    <ng-select formControlName="TrainerId"  [items]="(TrainerList$|async)" 
+    bindLabel="TrainerName"
+    bindValue="TrainerId"
+    placeholder="من فضلك اختر    "        
+  >
+  </ng-select>
+  <div class="text-danger" *ngIf="(submitted || f.TrainerId.touched) && f.TrainerId.errors">
+من فضلك اختر المدرب
+        </div>
+</div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <br/>
+            <br/>
+            <input *ngIf="!Show"   type="submit" class="btn btn-success btn-block" value="Submit">
+            <input *ngIf="Show" (click)="onBack()" type="button" class="btn btn-danger btn-block" value="رجوع">
+         
+        </div>
+                  
+    </div>
+</div>
+</form>
+
+<div *ngIf="Show">
+
+
+<mat-tab-group dir="rtl">
+    <mat-tab label="المسحوبات"> 
+     
+            <div id="demo">
+    
+      
+                <div dir="rtl" >
+                
+                <table dir="rtl" class="table table-bordered table-hover">
+          
+             
+                <thead style="text-align: right">
+             <th>المجموعه</th>
+                  <th>اسم المنتج </th>
+                  <th>الكميه </th>
+                  <th>المبلغ</th>
+
+                </thead>
+                <tbody style="text-align: right">
+                  <tr *ngFor="let item of ResultItem">
+          <td>{{item.ItemFlagDesc}}</td>
+          <td>{{item.ItemDesc}}</td>
+          <td>{{item.ItemQuantity}}</td>
+          <td>{{item.ItemTotalPrice}}</td>
+         
+          </tr>
+                </tbody>
+              </table> 
+                </div>
+             
+                </div>
+                <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+
+        </mat-tab>
+        <mat-tab label="الفواتير">
+            <div id="demo">
+    
+      
+                <div dir="rtl" >
+                
+                <table dir="rtl" class="table table-bordered table-hover">
+          
+             
+                <thead style="text-align: right">
+                  <th>كود الفاتوره  </th>
+                  <th>تاريخ الفاتوره </th>
+                  <th>اجمالي الفاتوره</th>
+                  <th>تاريخ اعتماد الفاتوره</th>
+                  <th>اسم معتمد الفاتوره</th>
+
+                </thead>
+                <tbody style="text-align: right">
+                  <tr *ngFor="let item of orders">
+          <td>{{item.OrderCode}}</td>
+          <td>{{item.OrderDate|date}}</td>
+          <td>{{item.OrderTotalValue}}</td>
+          <td>{{item.OrderDateApproval|date}}</td>
+          <td>{{item.EmployeeName}}</td>
+         
+          </tr>
+                </tbody>
+              </table> 
+                </div>
+             
+                </div>
+                <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+
+        </mat-tab>
+        <mat-tab label="المدفوعات">
+            <div id="demo">
+    
+      
+                <div dir="rtl" >
+                
+                <table dir="rtl" class="table table-bordered table-hover">
+          
+             
+                <thead style="text-align: right">
+                  
+                  <th>تاريخ الدفع </th>
+                  <th>وقت الدفع</th>
+                  <th>قيمة الدفع</th>
+                  <th>طريقة الدفع </th>
+                  <th>اسم الموظف  </th>
+                </thead>
+                <tbody style="text-align: right">
+                  <tr *ngFor="let item of Payment">
+          <td>{{item.PaymentDate|date}}</td>
+          <td>{{item.PaymentDate| date:'shortTime'}}</td>
+          <td>{{item.PaymentValue}}</td>
+          <td>{{item.PaymentTypeDesc}}</td>
+          <td>{{item.EmployeeName}}</td>
+         
+          </tr>
+                </tbody>
+              </table> 
+                </div>
+             
+                </div>
+                <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+
+        </mat-tab>
+        <mat-tab label="طلاب ">
+            <div id="demo">
+    
+      
+                <div dir="rtl" >
+                
+                <table dir="rtl" class="table table-bordered table-hover">
+          
+             
+                <thead style="text-align: right">
+                  <th>الاسم بالعربي</th>
+                  <th>الاسم بالانجليزي</th>
+                  <th>النوع</th>
+                  <th> رقم التليفون</th>
+                  <th>تاريخ الميلاد</th>
+                  <th>المحافظه</th>
+                  <th>المدينه</th>
+                  <th>البلد</th>
+                  <th>اسم المستوي</th>
+                  <th>اللغه</th>
+                  <th>المجموعه</th>
+                  <th>اسم المجموعه</th>
+                  <th>اسم المدرب</th>
+                </thead>
+                <tbody style="text-align: right">
+                  <tr *ngFor="let item of Students">
+          <td>{{item.SubscriberNameAr}}</td>
+          <td>{{item.SubscriberNameEn}}</td>
+          <td>{{item.GenderDesc}}</td>
+          <td>{{item.SubscriberPhone}}</td>  
+          <td>{{item.BirthDate |date}}</td>
+          <td>{{item.GovernorateDesc}}</td>
+          <td>{{item.Town}}</td>
+          <td>{{item.Village}}</td>
+          <td>{{item.LevelDesc}}</td>
+          <td>{{item.LanguageDescr}}</td>
+          <td>{{item.SubscriberFlagDesc}}</td>
+          <td>{{item.Group}}</td>
+          <td>{{item.TrainerName}}</td>
+          </tr>
+                </tbody>
+              </table> 
+                </div>
+             
+                </div>
+                
+                <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+        </mat-tab>
+
+        <mat-tab label="طلاب تم  حذفهم ">
+          <div id="demo">
+  
+    
+              <div dir="rtl" >
+              
+              <table dir="rtl" class="table table-bordered table-hover">
+        
+           
+              <thead style="text-align: right">
+                <th>الاسم بالعربي</th>
+                <th>الاسم بالانجليزي</th>
+                <th>النوع</th>
+                <th> رقم التليفون</th>
+                <th>تاريخ الميلاد</th>
+                <th>المحافظه</th>
+                <th>المدينه</th>
+                <th>البلد</th>
+                <th>اسم المستوي</th>
+                <th>اللغه</th>
+                <th>المجموعه</th>
+                <th>اسم المجموعه</th>
+                <th>اسم المدرب</th>
+              </thead>
+              <tbody style="text-align: right">
+                <tr *ngFor="let item of StudentsNotActive">
+        <td>{{item.SubscriberNameAr}}</td>
+        <td>{{item.SubscriberNameEn}}</td>
+        <td>{{item.GenderDesc}}</td>
+        <td>{{item.SubscriberPhone}}</td>  
+        <td>{{item.BirthDate |date}}</td>
+        <td>{{item.GovernorateDesc}}</td>
+        <td>{{item.Town}}</td>
+        <td>{{item.Village}}</td>
+        <td>{{item.LevelDesc}}</td>
+        <td>{{item.LanguageDescr}}</td>
+        <td>{{item.SubscriberFlagDesc}}</td>
+        <td>{{item.Group}}</td>
+        <td>{{item.TrainerName}}</td>
+        </tr>
+              </tbody>
+            </table> 
+              </div>
+           
+              </div>
+              
+              <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+      </mat-tab>
+
+      <mat-tab label="طلاب تم  انقطاعهم ">
+        <div id="demo">
+
+  
+            <div dir="rtl" >
+            
+            <table dir="rtl" class="table table-bordered table-hover">
+      
+         
+            <thead style="text-align: right">
+              <th>الاسم بالعربي</th>
+              <th>الاسم بالانجليزي</th>
+              <th>النوع</th>
+              <th> رقم التليفون</th>
+              <th>تاريخ الميلاد</th>
+              <th>المحافظه</th>
+              <th>المدينه</th>
+              <th>البلد</th>
+              <th>اسم المستوي</th>
+              <th>اللغه</th>
+              <th>المجموعه</th>
+              <th>اسم المجموعه</th>
+              <th>اسم المدرب</th>
+            </thead>
+            <tbody style="text-align: right">
+              <tr *ngFor="let item of StudentsAbsence">
+      <td>{{item.SubscriberNameAr}}</td>
+      <td>{{item.SubscriberNameEn}}</td>
+      <td>{{item.GenderDesc}}</td>
+      <td>{{item.SubscriberPhone}}</td>  
+      <td>{{item.BirthDate |date}}</td>
+      <td>{{item.GovernorateDesc}}</td>
+      <td>{{item.Town}}</td>
+      <td>{{item.Village}}</td>
+      <td>{{item.LevelDesc}}</td>
+      <td>{{item.LanguageDescr}}</td>
+      <td>{{item.SubscriberFlagDesc}}</td>
+      <td>{{item.Group}}</td>
+      <td>{{item.TrainerName}}</td>
+      </tr>
+            </tbody>
+          </table> 
+            </div>
+         
+            </div>
+            
+            <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+    </mat-tab>
+      
+    <mat-tab label="طلاب انهوا التدريب   ">
+      <div id="demo">
+
+
+          <div dir="rtl" >
+          
+          <table dir="rtl" class="table table-bordered table-hover">
+    
+       
+          <thead style="text-align: right">
+            <th>الاسم بالعربي</th>
+            <th>الاسم بالانجليزي</th>
+            <th>النوع</th>
+            <th> رقم التليفون</th>
+            <th>تاريخ الميلاد</th>
+            <th>المحافظه</th>
+            <th>المدينه</th>
+            <th>البلد</th>
+            <th>اسم المستوي</th>
+            <th>اللغه</th>
+            <th>المجموعه</th>
+            <th>اسم المجموعه</th>
+            <th>اسم المدرب</th>
+          </thead>
+          <tbody style="text-align: right">
+            <tr *ngFor="let item of StudentsFinished">
+    <td>{{item.SubscriberNameAr}}</td>
+    <td>{{item.SubscriberNameEn}}</td>
+    <td>{{item.GenderDesc}}</td>
+    <td>{{item.SubscriberPhone}}</td>  
+    <td>{{item.BirthDate |date}}</td>
+    <td>{{item.GovernorateDesc}}</td>
+    <td>{{item.Town}}</td>
+    <td>{{item.Village}}</td>
+    <td>{{item.LevelDesc}}</td>
+    <td>{{item.LanguageDescr}}</td>
+    <td>{{item.SubscriberFlagDesc}}</td>
+    <td>{{item.Group}}</td>
+    <td>{{item.TrainerName}}</td>
+    </tr>
+          </tbody>
+        </table> 
+          </div>
+       
+          </div>
+          
+          <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+  </mat-tab>
+
+</mat-tab-group>
+</div>

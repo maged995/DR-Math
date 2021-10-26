@@ -1,0 +1,135 @@
+
+    <div id="demo" >
+       <!--
+
+      <style>
+      
+      
+        @media print {
+          .print-only{
+                    display: block;
+                }
+        }
+        @media screen {
+          .print-only{
+                    display: none;
+                }
+        }
+      
+        
+          </style>
+            <div class="print-only">
+              <div dir="rtl"  class="row">
+        
+                <div class="col-md-6">
+                  <br/><br/>
+                  <br/><br/>
+                  <h4  style="font-size:xx-large;font-weight:bolder; text-align: center; ">شركة تكنوسيتي</h4>
+                  <h6 style="font-size:xx-large;font-weight: normal; text-align: center; ">للاجهزة الكهربائية والمحمول</h6>
+                  
+                </div>
+    
+              </div>
+      </div>
+        <br/>
+    
+       -->
+      <table dir="rtl" style="margin-right: 6px;" class="table table-bordered table-hover">
+        <tbody style="text-align: right">
+      <tr>
+      <td>كود الطلب</td>  
+      <td>{{OrderCode}}</td>
+      <td colspan="2">  اسم المدرب</td>
+      <td colspan="2">{{TrainerName}}</td>
+    
+    
+      </tr>
+      <tr>
+          
+      <td>تاريخ الطلب</td>
+      <td>{{OrderDate |date}}</td>
+
+
+    
+          <td>وقت الطلب</td>
+          <td>{{OrderDate |date:'shortTime'}}</td>
+
+        <td>القيمة الاجماليه </td>
+        <td>{{OrderTotalValue}}</td>
+
+      </tr>
+     
+      </tbody>
+      </table>
+     
+      <br>
+    
+    
+      <table *ngIf="OrderDetailsList.length>0" style="margin-right: 6px;" dir="rtl" class="table table-bordered table-hover">
+        <thead style="text-align: right">
+    
+    <th>نوع الصنف</th>
+        <th>الاسم </th>
+        <th> الكميه  </th>
+        <th>السعر </th>
+        <th>الاجمالي</th>
+      
+      
+       
+      </thead>
+      <tbody dir="rtl" style="text-align: right" *ngFor="let item of OrderDetailsList;let i=index;">
+        <tr> 
+     
+<td>{{item.ItemFlagDesc}}</td>
+            <td>{{item.ItemDesc}}</td>
+            <td>{{item.ItemQuantity}}</td>
+            <td>{{item.ItemPrice}}</td>
+            <td>{{item.ItemTotalPrice}}</td>
+        </tr>
+
+        <tr *ngFor="let sub of item.Subscribers;let s=index; ">
+            <td>اسم الطالب</td>
+            <td colspan="2">{{sub.SubscriberNameAr}}</td>
+            <td colspan="2">{{sub.SubscriberNameEn}}</td>
+
+        </tr>
+      </tbody>
+      </table>
+    
+    
+    
+    <!--
+     <div  style=" position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;"class="print-only">
+        <table class="table" style="border: 0px;" dir="rtl">
+        <tr>
+          <td style="font-size:x-large;font-weight: bold; text-align: center;">العنوان</td>
+          <td colspan="2" style="font-size:x-large;font-weight: normal;  text-align: center;">دمنهور -برج المني-خلف النادي الاجتماعي</td>
+        </tr>
+    
+        <tr>
+          <td colspan="2" style="font-size:x-large;font-weight: bold; text-align: center;">خدمة العملاء</td>
+          <td  style="font-size:x-large;font-weight: normal;  text-align: center;">045/3194716</td>
+        </tr>
+        </table>
+          </div>
+    -->
+    
+    
+ 
+    
+    
+    
+      </div>
+      
+        
+    
+          
+            <button  class="btn btn-success btn-block" [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}"  printSectionId="demo" class="btn btn-success btn-block" ngxPrint>print</button>
+         
+     
+    
+    

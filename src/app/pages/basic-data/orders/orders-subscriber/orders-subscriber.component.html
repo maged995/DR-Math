@@ -1,0 +1,36 @@
+
+
+<form [formGroup]="service.SubsriberForm" *ngIf="service.SubsriberForm" autocomplete="off" (submit)="onsubmit()">
+
+<cdk-virtual-scroll-viewport itemSize="300"   style="height:200px">
+    
+      
+    <div formArrayName="Subscibers" *ngFor="let item of service.SubsriberForm.get('Subscibers').controls;let i=index">
+        <div [formGroupName]="i">
+                <div class="form-group" >
+                    <label> اسم الطالب </label>
+                    <ng-select formControlName="SubscriberId"   [items]="(subscriberList$|async)" 
+                    bindLabel="SubscriberNameAr"
+                    bindValue="SubscriberId"
+                    placeholder="من فضلك اختر   الطالب"        
+                  >
+                  </ng-select>
+                  <div class="text-danger" *ngIf="submitted && item.get('SubscriberId').errors?.required">
+                    من فضلك ادخل  الطالب 
+                    </div>
+                    <div class="text-danger" *ngIf="submitted && item.get('SubscriberId').errors?.unique">
+                        من فضلك الطالب لايمكن تكراره 
+                        </div>
+                </div>
+
+            <br/>
+        </div>
+    </div>
+
+</cdk-virtual-scroll-viewport>
+<div class="form-group">
+    <input type="submit" *ngIf="submitNow" class="btn btn-success btn-block" value="Submit">
+    <input type="button" class="btn btn-danger btn-block" value="Close" (click)="onClose()">
+</div>
+</form>
+

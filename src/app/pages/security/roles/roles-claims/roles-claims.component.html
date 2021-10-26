@@ -1,0 +1,138 @@
+<!--
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+    <div style="overflow: auto;" class="example-item">
+-->
+
+
+<mat-toolbar color="primary">
+        <span class="example-fill-remaining-space"></span>  
+      <span>ادوار الصلاحيات </span>
+      <span class="example-fill-remaining-space"></span>  
+      </mat-toolbar> 
+
+
+
+
+<div  dir="rtl" style="margin: 0px;" class="row">
+ <div   style="text-align: right;" class="col-md-4">   
+<div style="margin: 0px;"  class="card">
+       
+    <div   class="card-body">
+    <h6> المدربين</h6>
+   
+       <!--
+            <input type="checkbox" (change)="selectALLbasicData($event)">   
+       &nbsp;&nbsp;&nbsp;<span style="font-size:small;">اختيار الكل</span> 
+   <hr>
+       -->
+ 
+        <div *ngFor="let item of service.trainerClaimList">
+       
+            
+                    <div class="form-check m-1">
+                       
+                        <input style="text-align: right;" type="checkbox"  [checked]=item.IsSelected (change)="item.IsSelected = !item.IsSelected" class="form-check-input" >
+                        &nbsp;&nbsp;&nbsp;
+                        <span style="font-size:10px;font-weight:900;"> {{item.ClaimValue}}</span>
+                    </div>
+                </div>
+    </div>
+        </div>
+
+
+
+  
+ </div>
+
+ <div   style="text-align: right;" class="col-md-4">   
+    <div   class="card">
+           
+        <div class="card-body">
+    
+    
+        <h6>الموظفين</h6>
+        <!--
+    <input type="checkbox" (change)="selectALLWhiteChease($event)">      &nbsp;&nbsp;&nbsp; <span style="font-size:small;">اختيار الكل</span> 
+        <hr>
+        -->
+    
+            <div *ngFor="let item of service.adminClaimList">
+           
+                
+                        <div class="form-check m-1">
+                           
+                            <input style="text-align: right;" type="checkbox"  [checked]=item.IsSelected (change)="item.IsSelected = !item.IsSelected" class="form-check-input" >
+                            &nbsp;&nbsp;&nbsp;
+                            <span style="font-size:10px;font-weight:900;"> {{item.ClaimValue}}</span>
+                        </div>
+                    </div>
+        </div>
+            </div>
+
+
+          
+     </div>
+
+
+
+
+
+
+         <div   style="text-align: right;" class="col-md-4"> 
+            
+     
+
+
+
+            <div   class="card">
+       
+                <div class="card-body">
+            
+            
+                <h6>الامان </h6>
+               <!--
+        <input type="checkbox" (change)="selectALLbasicData($event)">      &nbsp;&nbsp;&nbsp;<span style="font-size:small;">اختيار الكل</span> 
+              
+        //   <hr>
+        --> 
+        
+                    <div *ngFor="let item of service.securityClaimList">
+                   
+                        
+                                <div class="form-check m-1">
+                                   
+                                    <input style="text-align: right;" type="checkbox"  [checked]=item.IsSelected (change)="item.IsSelected = !item.IsSelected" class="form-check-input" >
+                                    &nbsp;&nbsp;&nbsp;
+                                    <span style="font-size:10px;font-weight:900;"> {{item.ClaimValue}}</span>
+                                </div>
+                            </div>
+                </div>
+                    </div>
+
+                 </div>
+
+
+        
+                 
+</div>
+
+
+ <div class="form-group">
+     <div class="row">
+         <div class="col">
+                <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="غلق">
+    </div>
+    <div class="col">
+            <input type="submit" (click)="onSubmit()" class="btn btn-success btn-block " value="تعديل">
+     
+    </div>
+    </div>
+    </div>
+
+<!--
+    </div>
+</cdk-virtual-scroll-viewport>
+-->
+
+     
+

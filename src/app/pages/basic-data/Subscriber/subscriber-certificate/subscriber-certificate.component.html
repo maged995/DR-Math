@@ -1,0 +1,1758 @@
+        <!-- Start Style -->
+  <style>
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFA;
+    }
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 20mm;
+        margin: 10mm auto;
+        border: 1px #D3D3D3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .subpage {
+        padding: 1cm;
+        border: 5px red solid;
+        height: 257mm;
+        outline: 2cm #FFEAEA solid;
+    }
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+
+
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+      }
+
+      .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+      }
+
+      .print-only{
+        display: block;
+      }
+    }
+
+    @media screen {
+      .print-only{
+        display: none;
+      }
+    }
+  </style>
+        <!-- End Style -->
+
+
+<div style="position: relative; overflow: hidden;">
+
+      <!-- Start Arabic Print -->
+  <div class="print-only page" >
+
+      <!-- Start Section Arabic Level 1 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==1  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-1.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 175px;
+        top: 380px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+          overflow: hidden;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+
+      <p class="name" style="
+        position: absolute;
+        top: 800px;
+        left: 15% !important;
+        width: 70%;
+        max-width:70%;
+        z-index: 15;
+        overflow: hidden;
+        text-align: center;
+        font-size: 38px;
+        font-weight: bold;
+        font-family: 'Assaf Font' !important;
+        line-height: 1.2;
+        -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        background-color: #5b002a;
+        background-image: linear-gradient(45deg, #5b002a, #a1002c);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        ">
+          {{SubscriberNameAr}}
+      </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 970px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+    <div style="
+      position: absolute;
+      bottom: 330px;
+      right: 180px;
+      width: 250px;
+    ">
+      <p style="
+        margin-left: 20px;
+        font-size: 38px;
+        text-align: center;
+        font-family: 'GE SS Two Medium';
+        color: #181814;
+      ">
+        {{TrainerName}}
+      </p>
+    </div>
+
+    </div>
+      <!-- End Section Arabic Level 1 -->
+
+
+      <!-- Start Section Arabic Level 2 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==2  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-2.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 175px;
+        top: 380px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+        position: absolute;
+        top: 800px;
+        left: 15% !important;
+        width: 70%;
+        max-width:70%;
+        z-index: 15;
+        overflow: hidden;
+        text-align: center;
+        font-size: 38px;
+        font-weight: bold;
+        font-family: 'Assaf Font' !important;
+        line-height: 1.2;
+        -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        background-image: linear-gradient(to left, #cf3f2b, #c4007a);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        ">
+          {{SubscriberNameAr}}
+      </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 960px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 340px;
+        right: 120px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 2 -->
+
+
+      <!-- Start Section Arabic Level 3 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==3  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-3.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 900px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Assaf Font' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #7aa52b;
+      background-image: linear-gradient(45deg, #7aa52b, #7aa52b);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameAr}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 1040px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 120px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 3 -->
+
+
+      <!-- Start Section Arabic Level 4 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==4  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-4.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 900px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Assaf Font' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #00697c;
+        background-image: linear-gradient(45deg, #00697c, #00697c);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameAr}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 1060px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 150px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 4 -->
+
+
+      <!-- Start Section Arabic Level 5 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==5  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-5.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 900px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Assaf Font' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #83355d;
+      background-image: linear-gradient(45deg, #83355d, #83355d);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameAr}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 1050px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 180px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 5 -->
+
+
+      <!-- Start Section Arabic Level 6 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==6  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-6.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 920px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Assaf Font' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf4029;
+      background-image: linear-gradient(45deg, #cf4029, #cf4029);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameAr}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 1080px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 240px;
+        right: 260px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 6 -->
+
+
+      <!-- Start Section Arabic Level 7 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==7  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-7.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 400px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 920px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Assaf Font' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf4029;
+      background-image: linear-gradient(45deg, #cf4029, #cf4029);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameAr}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 1080px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.333;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 150px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 7 -->
+
+
+      <!-- Start Section Arabic Level 8 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==8  && !English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/arabic/level-8.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 890px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Assaf Font' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf4029;
+      background-image: linear-gradient(45deg, #cf4029, #cf4029);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameAr}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      text-align: center;
+      position: absolute;
+      left: 12.5%;
+      top: 1050px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: 400;
+          font-family: 'GE SS Two Medium' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          قد إجتاز<span style="color: #b60083;">/</span>ت  {{LevelDesc}} لبرنامج دكتور ماث
+          (Abacus) في الحساب الذهني بالعداد الصيني
+          في الفترة من {{SubscriberDate|date: 'dd-MM-yyyy'}} إلى {{FinishedDate|date: 'dd-MM-yyyy'}}
+          <br>{{EstimateNameAr}}
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 240px;
+        right: 150px;
+        width: 250px;
+      ">
+        <p style="
+          margin-left: 20px;
+          font-size: 38px;
+          text-align: center;
+          font-family: 'GE SS Two Medium';
+          color: #181814;
+        ">
+          {{TrainerName}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section Arabic Level 8 -->
+
+
+  </div>
+      <!-- End Arabic Print -->
+
+
+
+      <!-- Start English Print -->
+  <div class="print-only page" >
+
+      <!-- Start Section English Level 1 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==1  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-1.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 180px;
+        top: 390px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+        position: absolute;
+        top: 800px;
+        left: 15% !important;
+        width: 70%;
+        max-width:70%;
+        z-index: 15;
+        overflow: hidden;
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        font-family: 'Times New Roman' !important;
+        line-height: 1.2;
+        -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+        background-color: #5b002a;
+        background-image: linear-gradient(45deg, #5b002a, #a1002c);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        ">
+          {{SubscriberNameEn}}
+      </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 980px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.333;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 330px;
+        right: 180px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: center;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 1 -->
+
+
+      <!-- Start Section English Level 2 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==2  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-2.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 180px;
+        top: 380px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 800px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf3f2b;
+      background-image: linear-gradient(45deg, #cf3f2b, #c40179);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 960px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.333;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 335px;
+        right: 150px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: center;
+          font-family: 'Times New Roman';
+          color: #272c39;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 2 -->
+
+
+      <!-- Start Section English Level 3 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==3  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-3.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 480px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 900px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #7aa52b;
+      background-image: linear-gradient(45deg, #7aa52b, #7aa52b);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 1060px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.333;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 160px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: center;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 3 -->
+
+
+      <!-- Start Section English Level 4 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==4  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-4.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 900px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #00697c;
+      background-image: linear-gradient(45deg, #00697c, #00697c);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 1050px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.333;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 170px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: center;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 4 -->
+
+
+      <!-- Start Section English Level 5 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==5  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-5.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 480px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 900px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #83355d;
+      background-image: linear-gradient(45deg, #83355d, #83355d);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 1050px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.333;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 250px;
+        right: 170px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: center;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 5 -->
+
+
+      <!-- Start Section English Level 6 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==6  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-6.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 880px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf4029;
+      background-image: linear-gradient(45deg, #cf4029, #cf4029);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 1020px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 240px;
+        right: 250px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: left;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 6 -->
+
+
+      <!-- Start Section English Level 7 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==7  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-7.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 410px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 860px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf4029;
+      background-image: linear-gradient(45deg, #cf4029, #cf4029);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 1010px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 245px;
+        right: 180px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: left;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 7 -->
+
+
+      <!-- Start Section English Level 8 -->
+    <div id="demo" class="print-only-2 subpage" *ngIf="LevelNo==8  && English" min-width="1180" min-height="1669">
+      <img src="../../../../../assets/certificate/English/level-en-8.png"
+      style="margin-top: -5px; min-width: 100%; background-size: cover;" alt="">
+
+      <div style="
+        position: absolute;
+        left: 200px;
+        top: 470px;
+        z-index: 28;
+        text-align: center !important;
+        width: 110px;
+        overflow: hidden;
+      ">
+        <p style="
+          font-size: 44px;
+          font-weight: 400;
+          font-family: 'ArialRoundedMTBold';
+          color: rgb(223, 0, 49);
+          line-height: 1.2;
+          text-align: center !important;
+          min-width: 100%;
+        ">
+          {{SubscriberLevelCode}}
+        </p>
+      </div>
+
+      <p class="name" style="
+      position: absolute;
+      top: 880px;
+      left: 15% !important;
+      width: 70%;
+      max-width:70%;
+      z-index: 15;
+      overflow: hidden;
+      text-align: center;
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Times New Roman' !important;
+      line-height: 1.2;
+      -moz-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -webkit-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      -ms-transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      transform: matrix( 2.41919471222137,0,0,4.84475349323538,0,0);
+      background-color: #cf4029;
+      background-image: linear-gradient(45deg, #cf4029, #cf4029);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      ">
+        {{SubscriberNameEn}}
+    </p>
+
+      <div style="
+      max-width: 75%;
+      min-width: 75%;
+      text-align: center !important;
+      position: absolute;
+      left: 12.5%;
+      top: 1020px;">
+
+        <p class="agtyaz" style="
+          min-width: 100%;
+          font-size: 56px;
+          font-weight: bold;
+          text-align: center !important;
+          font-family: 'Times New Roman' !important;
+          color: rgb(24, 24, 20);
+          line-height: 1.5;
+          z-index: 16;">
+          has passed the {{LevelEng}} of  Dr. Math program
+          <br/>
+          On mental arithmetic using (Abacus)
+          <br/>
+          From {{SubscriberDate | date:'dd-MM-yy'}} to {{FinishedDate | date:'dd-MM-yy'}}
+          <br>
+          <span style="
+          font-family: 'impact' !important;
+          font-size: 54px;
+          font-weight: 900;
+          text-align: center;
+          color: #272c39;
+          ">
+            {{EstimateNameEn}}</span>
+        </p>
+      </div>
+
+      <div style="
+        position: absolute;
+        bottom: 240px;
+        right: 180px;
+        width: 250px;
+      ">
+        <p style="
+          width: 100%;
+          margin-left: 20px;
+          font-size: 44px;
+          text-align: left;
+          font-family: 'Times New Roman';
+          color: #181814;
+        ">
+          {{TrainerNameEn}}
+        </p>
+      </div>
+
+    </div>
+      <!-- End Section English Level 8 -->
+  </div>
+      <!-- End English Print -->
+</div>
+<button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>
+
+
+
+

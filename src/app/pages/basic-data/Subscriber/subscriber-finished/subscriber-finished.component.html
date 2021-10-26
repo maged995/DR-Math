@@ -1,0 +1,121 @@
+<mat-toolbar color="primary">
+    <span class="example-fill-remaining-space"></span>  
+<span>طلاب انهوا تدريبهم</span>
+    <span class="example-fill-remaining-space"></span>  
+  </mat-toolbar> 
+  
+    
+    <div class="search-div">
+    
+   
+    
+   
+      <mat-form-field  class="search-form-field" floatLabel="never">
+        <input style="text-align: right" class="search" matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+          <mat-icon>close</mat-icon>
+        </button>
+      
+      </mat-form-field>
+    </div>
+    <div class="mat-elevation-z8">
+      <div id="demo">
+      <mat-table  [dataSource]="listData"  matSort>
+        <ng-container matColumnDef="SubscriberCode">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header> الكود</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.SubscriberCode }}</mat-cell>
+        </ng-container>    
+        
+        <ng-container matColumnDef="SubscriberNameAr">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header>  الاسم بالعربي   </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.SubscriberNameAr }}</mat-cell>
+        </ng-container>   
+  
+                
+        <ng-container matColumnDef="SubscriberNameEn">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>  الاسم بالانجليزي  </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.SubscriberNameEn }}</mat-cell>
+          </ng-container>   
+                    
+          <ng-container matColumnDef="LevelDesc">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>  المستوي   </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.LevelDesc }}</mat-cell>
+          </ng-container>   
+     
+          
+                       
+        <ng-container matColumnDef="TrainerName">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>  اسم المدرب   </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.TrainerName }}</mat-cell>
+          </ng-container>   
+
+                                
+        <ng-container matColumnDef="FinishedDate">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>   تاريخ النهايه   </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.FinishedDate |date}}</mat-cell>
+          </ng-container>  
+
+                             
+     
+                                 
+        <ng-container matColumnDef="EstimateNameAr">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>  التقدير    </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.EstimateNameAr }}</mat-cell>
+          </ng-container>   
+          
+     
+  
+          <ng-container matColumnDef="actions" >
+         
+            <mat-header-cell style="max-width: 300px;" *matHeaderCellDef></mat-header-cell>
+         
+            <mat-cell *matCellDef="let element" style="max-width: 300px;" >
+
+
+
+              <button class="btn btn-info"  (click)="onPrint(element.SubscriberLevelId)"> طباعه انجليزي</button>
+  
+              
+            </mat-cell>
+        
+          </ng-container>
+
+          <ng-container matColumnDef="other" >
+         
+            <mat-header-cell style="max-width: 300px;" *matHeaderCellDef></mat-header-cell>
+         
+            <mat-cell *matCellDef="let element" style="max-width: 300px;" >
+             
+              <button class="btn btn-info"  (click)="onPrintAr(element.SubscriberLevelId)"> طباعه عربي</button>
+  
+              
+            </mat-cell>
+        
+          </ng-container>
+  
+    
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            Loading data...
+          </mat-footer-cell>
+        </ng-container>
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            No data.
+          </mat-footer-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+     
+      </mat-table>
+  </div>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+  
+  
+  
+  
+  

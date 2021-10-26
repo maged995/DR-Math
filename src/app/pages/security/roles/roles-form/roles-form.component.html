@@ -1,0 +1,21 @@
+<form [formGroup]="service.rolesForm" *ngIf="service.rolesForm" autocomplete="off" (submit)="onSubmit()">
+  
+         
+            
+<div class="form-group">
+    <label>اسم الرتبه </label>
+    <input type="text" class="form-control" formControlName="RoleName" [class.is-invalid]="(submitted ||f.RoleName.touched)&& f.RoleName.errors">
+<div class="text-danger" *ngIf="(submitted ||f.RoleName.touched)&& f.RoleName.errors">
+    من فضلك ادخل اسم الرتبه
+</div>
+</div>
+              
+<div class="form-group">
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+</div>
+
+            <div class="form-group">
+                <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+            </div>
+</form>
+

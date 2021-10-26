@@ -1,0 +1,75 @@
+<style>
+
+
+  @media print {
+    .print-only{
+              display: block;
+          }
+
+
+  }
+  @media screen {
+    .print-only{
+              display: none;
+          }
+
+
+  }
+
+    </style> 
+
+
+<div id="demo1" style="width: 10cm; height: 6cm;">
+
+ 
+
+        <div  class="card  print-only " style="background-color: rgb(235, 231, 233); height: 30%;">
+        
+                <img style="width: 700px; height: 200px; padding: 20px; position: fixed; top: 5px; right: 5px;" src="/trainerapp/assets/cards/1.png">
+                <img style="width: 150px; height: 150px; vertical-align: middle; border-radius: 50%; padding: 4px; position: fixed; top: 80px; left:40px;" [src]="imageUrl">
+<div style="position: fixed; top:240px;left: 40px;font-size: 3rem;">
+<img style="height: 40px; width: 40px;" src="/trainerapp/assets/cards/SN.png">
+{{SubscriberCode}}
+</div>
+
+<div style="position: fixed; top:320px;left: 20px;">
+   <h2>رئيس مجلس الادارة </h2>
+   <img style="width: 120px; height: 50px; margin-left: 35px;" src="/trainerapp/assets/cards/Layer33.png">
+    </div>
+        </div>
+                <div class="print-only"  style="background-image: url('/trainerapp/assets/cards/Layer34.png'); position: fixed; top: 200px; right: 5px; width: 70%;">
+                <h1 style="text-align: center;">{{SubscriberNameAr}}</h1>
+                <h3 style="text-align: center;">{{SubscriberNameEn}}</h3>
+                <img style="float: right;margin-right: 30px;  width: 80px; height: 80px; text-align: center;" src="/trainerapp/assets/cards/VectorSmartObjectcop_0.png">
+                <img style="float: right;margin-right: 120px;  width: 80px; height: 80px;" src="/trainerapp/assets/cards/VectorSmartObjectcop.png">
+                <img style="float: right;margin-right: 100px;  width: 80px; height: 80px;" src="/trainerapp/assets/cards/Layer37.png">
+                <img style="float: right;margin-right: 110px;  width: 80px; height: 80px;" src="/trainerapp/assets/cards/VectorSmartObjectcop_1.png">
+                <div style="border-left: 2px solid black; height: 120px; position: absolute; right: 180px;"></div>
+                <div style="border-left: 2px solid black; height: 120px; position: absolute; right: 370px;"></div>
+                <div style="border-left: 2px solid black; height: 120px; position: absolute; right: 550px;"></div>
+                <h3 style="clear: both; float: right;margin-right: 20px;  width: 150px; height: 80px; text-align: center;">{{GovernorateDesc}}</h3>
+                <h3 style="float: right;margin-right: 30px;  width: 150px; height: 80px; text-align: center;">{{BirthDate|date}}</h3>
+                <h3 style="float: right;margin-right: 30px;  width: 150px; height: 80px;">{{SubscriberDate|date}}</h3>
+            <h4 style="float: right;margin-right: 40px;  width: 130px; height: 80px;">{{TrainerName}}</h4>
+                </div>
+               
+    
+
+ 
+</div>
+
+
+
+  <div id="demo2">
+    <div  class="print-only" style="display: block;
+    margin-left: auto;
+    
+    margin-right: auto;">
+      <img style="width: 100%; height: 50%;" src="/trainerapp/assets/cards/card.png">
+    </div>
+  </div>
+  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo1"  class="btn btn-success btn-block" ngxPrint>طباعه وجه الكارنيه</button>
+
+  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo2"  class="btn btn-info btn-block" ngxPrint>طباعة ظهر الكارنيه</button>
+
+

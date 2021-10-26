@@ -1,0 +1,53 @@
+<div id="demo">
+  
+    <h1 class="text-center">حساب المدرب    </h1>  
+  <table dir="rtl" style="margin-right: 6px;" class="table table-bordered table-hover">
+    <tbody style="text-align: right">
+  <tr>
+ 
+    <td> اسم المدرب </td>
+    <td>{{TrainerName}}</td>
+  
+<td>الاجمالي</td>
+<td>{{Total}}</td>
+
+  </tr>
+
+  </tbody>
+  </table>
+ 
+  <br>
+
+
+  <table *ngIf="DetailsList.length>0" style="margin-right: 6px;" dir="rtl" class="table table-bordered table-hover">
+    <thead style="text-align: right">
+
+    <th> اسم العمليه </th>
+    <th>تاريخ العمليه</th>
+    <th>وقت العمليه</th>
+    <th> +</th>
+    <th> -  </th>
+  
+  
+  
+   
+  </thead>
+  <tbody dir="rtl" style="text-align: right">
+    <tr  *ngFor="let item of DetailsList;let i=index;"> 
+ 
+        <td>{{item.DocTypeName}}</td>
+        <td>{{item.Date|date}}</td>
+        <td>{{item.Date| date:'shortTime'}}</td>
+        <td>{{item.Depit}}</td>
+        <td>{{item.Credit}}</td>
+        <td>
+          <button (click)="onReports(item.DocTypeId,item.DocNum)">
+          عرض  
+          </button>
+        </td>
+    </tr>
+  </tbody>
+  </table>
+
+  </div>   
+        <button class="btn btn-success btn-block" [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}"  printSectionId="demo" class="btn btn-success btn-block" ngxPrint>print</button>

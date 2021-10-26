@@ -1,0 +1,122 @@
+<mat-toolbar color="primary">
+  <span class="example-fill-remaining-space"></span>  
+<span *ngIf="SubscriberFlagId==1">الطلاب</span>
+<span *ngIf="SubscriberFlagId==2">حضانات</span>
+<span *ngIf="SubscriberFlagId==3">مدارس</span>
+<span *ngIf="SubscriberFlagId==4">كورس</span>
+
+<span class="example-fill-remaining-space"></span>  
+</mat-toolbar> 
+
+  
+  <div class="search-div">
+    <button style="float: right;" mat-raised-button  (click)="onCreateOrEdit(null)">
+      <mat-icon>add</mat-icon>اضافه جديد
+    </button>
+    <button *ngIf="SubscriberFlagId==1" class="btn btn-primary" (click)="onCreate()">
+اضافة طلاب انهوا تدريبهم او تم انقطاعهم 
+    </button>
+ 
+  
+ 
+    <mat-form-field  class="search-form-field" floatLabel="never">
+      <input style="text-align: right" class="search" matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    
+    </mat-form-field>
+  </div>
+  <div class="mat-elevation-z8">
+    <div id="demo">
+    <mat-table  [dataSource]="listData"  matSort>
+      <ng-container matColumnDef="SubscriberCode">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header> الكود</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.SubscriberCode }}</mat-cell>
+      </ng-container>    
+      
+      <ng-container matColumnDef="SubscriberNameAr">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>  الاسم    </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.SubscriberNameAr }}</mat-cell>
+      </ng-container>   
+
+   
+        
+
+      <ng-container matColumnDef="actions" >
+       
+        <mat-header-cell style="max-width: 300px;" *matHeaderCellDef></mat-header-cell>
+     
+        <mat-cell *matCellDef="let element" style="max-width: 300px;" >
+          <button class="btn btn-info"  (click)="onCreateOrEdit(element.SubscriberId)"> تعديل </button>
+        
+          
+        </mat-cell>
+    
+      </ng-container>
+
+      <ng-container matColumnDef="another1" >
+       
+        <mat-header-cell style="max-width: 300px;" *matHeaderCellDef></mat-header-cell>
+     
+        <mat-cell *matCellDef="let element" style="max-width: 300px;" >
+          <button class="btn btn-danger" (click)="onDelete(element.SubscriberId)">حذف</button>
+        
+          
+        </mat-cell>
+    
+      </ng-container>
+     
+      <ng-container matColumnDef="another" >
+       
+        <mat-header-cell style="max-width: 300px;" *matHeaderCellDef></mat-header-cell>
+     
+        <mat-cell *matCellDef="let element" style="max-width: 300px;" >
+       
+          <button class="btn btn-warning"  *ngIf="SubscriberFlagId==1" (click)="onClose(element.SubscriberId)">انقطاع </button>
+
+          <button class="btn btn-primary"  *ngIf="SubscriberFlagId!=1" (click)="onPosition(element.SubscriberId)"> تعديل المكان</button>
+
+        </mat-cell>
+    
+      </ng-container>
+
+      <ng-container matColumnDef="finish" >
+       
+        <mat-header-cell style="max-width: 300px;" *matHeaderCellDef></mat-header-cell>
+     
+        <mat-cell *matCellDef="let element" style="max-width: 300px;" >
+       
+          <button class="btn btn-success"  *ngIf="SubscriberFlagId==1" (click)="onFinish(element.SubscriberId)">انتهاء </button>
+
+        
+
+        </mat-cell>
+    
+      </ng-container>
+
+  
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading data...
+        </mat-footer-cell>
+      </ng-container>
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          No data.
+        </mat-footer-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+      <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+   
+    </mat-table>
+</div>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+
+
+
+

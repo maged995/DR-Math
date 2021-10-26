@@ -1,0 +1,91 @@
+<div id="demo">
+<!--
+
+    <style>
+    
+    
+      @media print {
+        .print-only{
+                  display: block;
+              }
+      }
+      @media screen {
+        .print-only{
+                  display: none;
+              }
+      }
+    
+      
+        </style>
+          <div class="print-only">
+            <div dir="rtl"  class="row">
+      
+              <div class="col-md-6">
+                <br/><br/>
+                <br/><br/>
+                <h4  style="font-size:xx-large;font-weight:bolder; text-align: center; ">شركة تكنوسيتي</h4>
+                <h6 style="font-size:xx-large;font-weight: normal; text-align: center; ">للاجهزة الكهربائية والمحمول</h6>
+                
+              </div>
+  
+            </div>
+    </div>
+      <br/>
+
+-->
+  
+  <div dir="rtl" >
+  
+  <table dir="rtl" class="table table-bordered table-hover">
+  <tbody style="text-align: right">
+  
+  <tr>
+  <td>الاسم  </td>
+  <td>{{TrainerName}}</td>
+  </tr>
+  
+  <tr>
+  <td>تاريخ الدفع</td>
+  <td>{{PaymentDate |date}}</td>
+  </tr>
+  <tr>
+   <td>وقت الدفع</td>
+   <td>{{PaymentDate |date:'shortTime'}}</td>
+  </tr>
+  <tr>
+    <td> نوع الدفع</td>
+    <td>{{PaymentTypeDesc}}</td>
+  </tr>
+  <tr>
+  <td>قيمة الدفع </td>
+  <td>{{PaymentValue}}</td>
+  </tr>
+  </tbody>
+  </table> 
+  
+  
+  
+  </div>
+  <!--
+  <div  style=" position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;"class="print-only">
+    <table class="table" style="border: 0px;" dir="rtl">
+    <tr>
+      <td style="font-size:x-large;font-weight: bold; text-align: center;">العنوان</td>
+      <td colspan="2" style="font-size:x-large;font-weight: normal;  text-align: center;">دمنهور -برج المني-خلف النادي الاجتماعي</td>
+    </tr>
+  
+    <tr>
+      <td colspan="2" style="font-size:x-large;font-weight: bold; text-align: center;">خدمة العملاء</td>
+      <td  style="font-size:x-large;font-weight: normal;  text-align: center;">045/3194716</td>
+    </tr>
+    </table>
+      </div>
+  -->
+
+  </div>
+  
+  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo"  class="btn btn-success btn-block" ngxPrint>print</button>

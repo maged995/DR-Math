@@ -1,0 +1,99 @@
+
+<form [formGroup]="service.itemForm" *ngIf="service.itemForm" autocomplete="off" (submit)="onSubmit()">
+
+
+
+        <div class="form-group" *ngIf="data.ItemFlagId==5 || data.ItemFlagId==6 || data.ItemFlagId==7">
+        <label>الاسم </label>
+        <input type="text" class="form-control" formControlName="ItemDesc" [class.is-invalid]="(submitted ||f.ItemDesc.touched)&& f.ItemDesc.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.ItemDesc.touched)&& f.ItemDesc.errors">
+        من فضلك ادخل الاسم   
+    </div>
+    </div>
+
+    <div class="form-group" *ngIf="data.ItemFlagId==1">
+        <label> اسم المستوي </label>
+        <ng-select formControlName="LevelId"  [items]="(levelsList$|async)" 
+        bindLabel="LevelDesc"
+        bindValue="LevelId"
+        placeholder="من فضلك اختر اسم المستوي  "        
+      >
+      </ng-select>
+      <div class="text-danger" *ngIf="(submitted || f.LevelId.touched) && f.LevelId.errors">
+        من فضلك ادخل   اسم المستوي 
+        </div>
+    </div>
+
+    <div class="form-group" *ngIf="data.ItemFlagId==2">
+        <label> نوع العداد </label>
+        <ng-select formControlName="SizeId"  [items]="(sizesList$|async)" 
+        bindLabel="SizeDesc"
+        bindValue="SizeId"
+        placeholder="من فضلك اختر نوع العداد"        
+      >
+      </ng-select>
+      <div class="text-danger" *ngIf="(submitted || f.SizeId.touched) && f.SizeId.errors">
+        من فضلك ادخل  نوع العداد 
+        </div>
+    </div>
+
+    <div class="form-group" *ngIf="data.ItemFlagId==1 || data.ItemFlagId==2 " >
+        <label *ngIf="data.ItemFlagId==1"> اللغه  </label>
+        <label *ngIf="data.ItemFlagId==2">النوع</label>
+        <ng-select formControlName="LanguageId"  [items]="(languageList$|async)" 
+        bindLabel="LanguageDescr"
+        bindValue="LanguageId"
+        placeholder="من فضلك اختر    "        
+      >
+      </ng-select>
+      <div class="text-danger" *ngIf="(submitted || f.LanguageId.touched) && f.LanguageId.errors">
+        <label *ngIf="data.ItemFlagId==1"> اللغه  </label>
+        <label *ngIf="data.ItemFlagId==2 ">النوع</label>
+            </div>
+    </div>
+
+    <div class="form-group" *ngIf="data.ItemFlagId==2 || data.ItemFlagId==3 || data.ItemFlagId==4">
+        <label *ngIf="data.ItemFlagId==2">عدد الاعمده </label>
+        <label *ngIf="data.ItemFlagId==3">عدد الاذرع </label>
+        <label *ngIf="data.ItemFlagId==4">المقاس</label>
+        <input type="text" class="form-control" formControlName="SizeNo" [class.is-invalid]="(submitted ||f.SizeNo.touched)&& f.SizeNo.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.SizeNo.touched)&& f.SizeNo.errors">
+        <label *ngIf="data.ItemFlagId==4">        من فضلك ادخل المقاس   
+        </label>
+        <label *ngIf="!data.ItemFlagId==4">        من فضلك ادخل العدد   
+</label>
+
+    </div> 
+    </div>
+
+<!--
+       <div class="form-group" >
+      <label>سعر الشراء</label>
+        <input type="number" class="form-control" formControlName="ItemBuyPrice" [class.is-invalid]="(submitted ||f.ItemBuyPrice.touched)&& f.ItemBuyPrice.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.ItemBuyPrice.touched)&& f.ItemBuyPrice.errors">
+من فضلك ادخل سعر الشراء
+    </div> 
+    </div> 
+-->
+
+
+
+    <div class="form-group" >
+        <label>سعر البيع</label>
+          <input type="number" class="form-control" formControlName="ItemSellPrice" [class.is-invalid]="(submitted ||f.ItemSellPrice.touched)&& f.ItemSellPrice.errors">
+      <div class="text-danger" *ngIf="(submitted ||f.ItemSellPrice.touched)&& f.ItemSellPrice.errors">
+  من فضلك ادخل سعر البيع
+      </div> 
+      </div>
+  
+
+
+  
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-success btn-block" value="Submit">
+    </div>
+                <div class="form-group">
+                    <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+                </div>
+    </form>

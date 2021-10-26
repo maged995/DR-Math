@@ -1,0 +1,13 @@
+<agm-map style="height:80vh"
+  [latitude]=31.02
+   [longitude]=30.28
+   >
+   <agm-marker *ngFor="let item of SubscribersList" [latitude]="item.latitude" [longitude]="item.Longitude" [title]="item.SubscriberNameAr" [label]="item.SubscriberNameAr" >
+    <agm-info-window>
+      <label>الاسم بالعربي<p>{{item.SubscriberNameAr}}</p></label>
+      <label>الاسم بالانجليزي<p>{{item.SubscriberNameEn}}</p></label>
+      <label>النوع<p>{{item.SubscriberFlagDesc}}</p></label>
+      <label>عدد الطلاب<p>{{item.Students}}</p></label>
+    </agm-info-window>
+   </agm-marker>
+ </agm-map>

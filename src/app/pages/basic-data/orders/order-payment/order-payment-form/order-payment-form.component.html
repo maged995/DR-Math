@@ -1,0 +1,51 @@
+
+<form [formGroup]="service.trainerPaymentForm" *ngIf="service.trainerPaymentForm" autocomplete="off" (submit)="onSubmit()">
+
+
+<div class="form-group">
+    <label> اسم المدرب </label>
+    <ng-select formControlName="TrainerId"  [items]="(trainerList$|async)" 
+    bindLabel="TrainerName"
+    bindValue="TrainerId"
+    placeholder="من فضلك اختر اسم المدرب  "        
+  >
+  </ng-select>
+  <div class="text-danger" *ngIf="(submitted || f.TrainerId.touched) && f.TrainerId.errors">
+    من فضلك ادخل   اسم المدرب 
+    </div>
+</div>
+
+<div class="form-group" >
+    <label> نوع الدفع  </label>
+    <ng-select formControlName="PaymentTypeId"  [items]="(paymentTypeList$|async)" 
+    bindLabel="PaymentTypeDesc"
+    bindValue="PaymentTypeId"
+    placeholder="من فضلك اختر نوع الدفع "        
+  >
+  </ng-select>
+  <div class="text-danger" *ngIf="(submitted || f.PaymentTypeId.touched) && f.PaymentTypeId.errors">
+    من فضلك اختر نوع الدفع
+        </div>
+</div>
+
+
+
+<div class="form-group" >
+    <label> المبلغ المدفوع</label>
+      <input type="number" class="form-control" formControlName="PaymentValue" [class.is-invalid]="(submitted ||f.PaymentValue.touched)&& f.PaymentValue.errors">
+  <div class="text-danger" *ngIf="(submitted ||f.PaymentValue.touched)&& f.PaymentValue.errors">
+من فضلك ادخل  المبلغ
+  </div> 
+  </div>
+
+
+
+
+
+<div class="form-group">
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+</div>
+            <div class="form-group">
+                <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+            </div>
+</form>

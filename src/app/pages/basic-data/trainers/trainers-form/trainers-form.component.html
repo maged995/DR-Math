@@ -1,0 +1,91 @@
+<form [formGroup]="service.trainerForm" *ngIf="service.trainerForm" autocomplete="off" (submit)="onSubmit()">
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>الاسم </label>
+            <input type="text" class="form-control" formControlName="TrainerName" [class.is-invalid]="(submitted ||f.TrainerName.touched)&& f.TrainerName.errors">
+        <div class="text-danger" *ngIf="(submitted ||f.TrainerName.touched)&& f.TrainerName.errors">
+            من فضلك ادخل الاسم   
+        </div>
+        </div>
+        <div class="form-group">
+            <label>الاسم بالانجليزي</label>
+            <input type="text" class="form-control" formControlName="TrainerNameEn" [class.is-invalid]="(submitted ||f.TrainerNameEn.touched)&& f.TrainerNameEn.errors">
+        <div class="text-danger" *ngIf="(submitted ||f.TrainerNameEn.touched)&& f.TrainerNameEn.errors">
+            من فضلك ادخل الاسم   
+        </div>
+        </div>
+    
+        <div class="form-group">
+            <label> رقم الهاتف</label>
+            <input type="text" class="form-control" formControlName="TrainerPhone" [class.is-invalid]="(submitted ||f.TrainerPhone.touched)&& f.TrainerPhone.errors">
+        <div class="text-danger" *ngIf="(submitted ||f.TrainerPhone.touched)&& f.TrainerPhone.errors">
+            من فضلك ادخل رقم الهاتف  
+        </div>
+        </div>
+    
+    
+    
+        <div class="form-group">
+            <label> النوع </label>
+            <ng-select formControlName="GenderId"  [items]="(genderList$|async)" 
+            bindLabel="GenderDesc"
+            bindValue="GenderId"
+            placeholder="من فضلك اختر  النوع  "        
+          >
+          </ng-select>
+          <div class="text-danger" *ngIf="(submitted || f.GenderId.touched) && f.GenderId.errors">
+            من فضلك ادخل النوع
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="form-group">
+            <label> اسم المحافظه</label>
+            <ng-select formControlName="GovernorateId"  [items]="(governorateList$|async)" 
+            bindLabel="GovernorateDesc"
+            bindValue="GovernorateId"
+            placeholder="من فضلك اختر  اسم المحافظه "        
+          >
+          </ng-select>
+          <div class="text-danger" *ngIf="(submitted || f.GovernorateId.touched) && f.GovernorateId.errors">
+            من فضلك ادخل   اسم  المحافظه
+            </div>
+        </div>
+    
+    
+            <div class="form-group">
+              <label>اسم المدينه</label>
+              <input type="text" class="form-control" formControlName="Town" [class.is-invalid]="(submitted ||f.Town.touched)&& f.Town.errors">
+          <div class="text-danger" *ngIf="(submitted ||f.Town.touched)&& f.Town.errors">
+              من فضلك ادخل اسم الوظيفه  
+          </div>
+          </div>
+    
+          <div class="form-group">
+            <label>اسم الشارع</label>
+            <input type="text" class="form-control" formControlName="Villige" [class.is-invalid]="(submitted ||f.Villige.touched)&& f.Villige.errors">
+        <div class="text-danger" *ngIf="(submitted ||f.Villige.touched)&& f.Villige.errors">
+            من فضلك ادخل اسم الشارع  
+        </div>
+        </div>
+
+        <div class="form-group">
+            <label>من حقة الدخول  كمستخدم للبرنامج</label>
+            <input type="checkbox" class="form-control" formControlName="IsLogIn">
+        </div>  
+    
+    </div>
+</div>
+
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-success btn-block" value="Submit">
+    </div>
+                <div class="form-group">
+                    <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+                </div>
+    </form>

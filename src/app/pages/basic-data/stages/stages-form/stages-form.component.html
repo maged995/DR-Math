@@ -1,0 +1,22 @@
+
+<form [formGroup]="service.stageForm" *ngIf="service.stageForm" autocomplete="off" (submit)="onSubmit()">
+       
+    <div class="form-group">
+        <label>اسم المرحله</label>
+        <input type="text" class="form-control" formControlName="StageDesc" [class.is-invalid]="(submitted ||f.StageDesc.touched)&& f.StageDesc.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.StageDesc.touched)&& f.StageDesc.errors">
+        من فضلك ادخل اسم  المرحله
+    </div>
+    </div>
+
+
+          
+    <div class="form-group">
+        <input type="submit" class="btn btn-success btn-block" value="Submit">
+    </div>
+                <div class="form-group">
+                    <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+                </div>
+    </form>
+    
+    

@@ -1,0 +1,25 @@
+
+<form [formGroup]="service.subscribeDegreeForm" *ngIf="service.subscribeDegreeForm" autocomplete="off" (submit)="onSubmit()">
+
+            <div class="form-group" >
+    <label>  التقدير </label>
+    <ng-select formControlName="EstimateId"  [items]="(estimateList$|async)" 
+    bindLabel="EstimateNameAr"
+    bindValue="EstimateId"
+    placeholder="من فضلك اختر التقدير   "        
+  >
+  </ng-select>
+  <div class="text-danger" *ngIf="(submitted || f.EstimateId.touched) && f.EstimateId.errors">
+    من فضلك ادخل   التقدير  
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <input type="submit" class="btn btn-success btn-block" value="Submit">
+</div>
+            <div class="form-group">
+                <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+            </div>
+</form>

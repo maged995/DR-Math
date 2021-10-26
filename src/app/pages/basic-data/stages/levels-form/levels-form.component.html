@@ -1,0 +1,39 @@
+<form [formGroup]="service.levelForm" *ngIf="service.levelForm" autocomplete="off" (submit)="onSubmit()">
+
+
+
+
+
+        <div class="form-group">
+          <label>اسم المستوي بالعربي</label>
+          <input type="text" class="form-control" formControlName="LevelDesc" [class.is-invalid]="(submitted ||f.LevelDesc.touched)&& f.LevelDesc.errors">
+      <div class="text-danger" *ngIf="(submitted ||f.LevelDesc.touched)&& f.LevelDesc.errors">
+          من فضلك ادخل اسم المستوي  بالعربي
+      </div>
+      </div>
+
+      
+      <div class="form-group">
+        <label>اسم المستوي بالانجليزي</label>
+        <input type="text" class="form-control" formControlName="LevelEng" [class.is-invalid]="(submitted ||f.LevelEng.touched)&& f.LevelEng.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.LevelEng.touched)&& f.LevelEng.errors">
+        من فضلك ادخل اسم المستوي  بالانجليزي
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label>رقم المستوي </label>
+        <input type="number" class="form-control" formControlName="LevelNo" [class.is-invalid]="(submitted ||f.LevelNo.touched)&& f.LevelNo.errors">
+    <div class="text-danger" *ngIf="(submitted ||f.LevelNo.touched)&& f.LevelNo.errors">
+        من فضلك ادخل رقم المستوي  
+    </div>
+    </div>
+
+  
+    <div class="form-group">
+        <input type="submit" class="btn btn-success btn-block" value="Submit">
+    </div>
+                <div class="form-group">
+                    <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+                </div>
+    </form>

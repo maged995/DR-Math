@@ -1,0 +1,51 @@
+<form [formGroup]="service.userRolesForm" *ngIf="service.userRolesForm" autocomplete="off" (submit)="onSubmit()">
+
+ 
+ 
+
+    
+  <div class="form-group" *ngIf="data.Flag==1">
+    <label>صلاحية المستخدم </label>
+   
+    
+  <ng-select formControlName="RoleId" [items]="roleList$|async"
+    bindLabel="Name"
+    bindValue="Id"
+    placeholder="اسم الصلاحية"
+  >
+  </ng-select>
+
+  <div class="text-danger" *ngIf="(submitted || f.RoleId.touched) && f.RoleId.errors">
+ادخل اسم الصلاحية من فضلك 
+    </div>
+      </div>
+
+
+      <div class="form-group" *ngIf="data.Flag==2">
+        <label> كلمة السر الجديده</label>
+        <input type="password" placeholder="كلمة المرور" class="form-control" formControlName="NewPassword" >
+      <div class="text-danger" *ngIf="(submitted || f.NewPassword.touched) && f.NewPassword.errors">
+        <div *ngIf="f.NewPassword.errors.required">
+            من فضلك ادخل كلمة السر
+        </div>
+        <div *ngIf="f.NewPassword.errors.minlength">
+         من فضلك كلمة الحروف اكثر من اويساوي 4 ارقام
+        </div>
+      </div>
+      </div>
+    
+    
+    
+                  
+    <div class="form-group">
+        <input type="submit" class="btn btn-success btn-block" value="Submit">
+    </div>
+                <div class="form-group">
+                    <input type="button" (click)="onClose()" class="btn btn-danger btn-block" value="Close">
+                </div>
+    
+     
+    </form>
+    
+    
+

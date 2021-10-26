@@ -1,0 +1,111 @@
+<div class="search-div">
+    <mat-toolbar color="primary">
+      <span class="example-fill-remaining-space"></span>  
+    <span *ngIf="TrainerFlag==1">المدربين  </span>
+    <span *ngIf="TrainerFlag==2">الموظفين</span>
+    <span class="example-fill-remaining-space"></span>  
+    </mat-toolbar>   
+    
+    <button style="float: right;" mat-raised-button  (click)="onCreateOrEdit(null)">
+        <mat-icon>add</mat-icon>اضافه جديد
+      </button>
+   
+    
+   
+      <mat-form-field  class="search-form-field" floatLabel="never">
+        <input style="text-align: right" class="search" matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+          <mat-icon>close</mat-icon>
+        </button>
+      
+      </mat-form-field>
+    </div>
+    <div class="mat-elevation-z8">
+      <div id="demo">
+      <mat-table  [dataSource]="listData"  matSort>
+        <ng-container matColumnDef="TrainerName">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header>اسم  المدرب   </mat-header-cell>
+          
+          <mat-cell *matCellDef="let element">{{element.TrainerName }}</mat-cell>
+        </ng-container>
+          
+          <ng-container matColumnDef="TrainerPhone">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header> رقم الهاتف</mat-header-cell>
+            
+            <mat-cell *matCellDef="let element">{{element.TrainerPhone }}</mat-cell>
+          </ng-container>
+  
+          
+          <ng-container matColumnDef="GovernorateDesc">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header> اسم المحافظه </mat-header-cell>
+            
+            <mat-cell *matCellDef="let element">{{element.GovernorateDesc }}</mat-cell>
+          </ng-container>
+  
+          
+          <ng-container matColumnDef="Town">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>اسم  المدينه   </mat-header-cell>
+            
+            <mat-cell *matCellDef="let element">{{element.Town }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Villige">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>اسم  الشارع   </mat-header-cell>
+            
+            <mat-cell *matCellDef="let element">{{element.Villige }}</mat-cell>
+          </ng-container>
+  
+          
+          <ng-container matColumnDef="GenderDesc">
+            <mat-header-cell *matHeaderCellDef  mat-sort-header>النوع     </mat-header-cell>
+            
+            <mat-cell *matCellDef="let element">{{element.GenderDesc }}</mat-cell>
+          </ng-container>
+
+          
+
+  
+  
+  
+     
+       
+  
+       
+        <ng-container matColumnDef="actions">
+         
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+       
+          <mat-cell *matCellDef="let element">
+            <button    mat-icon-button  (click)="onCreateOrEdit(element.TrainerId)"><mat-icon>launch</mat-icon></button>
+            <button mat-icon-button  color="warn" (click)="onDelete(element.TrainerId)"><mat-icon>delete</mat-icon></button>
+        
+          </mat-cell>
+      
+        </ng-container>
+    
+  
+    
+     
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            Loading data...
+          </mat-footer-cell>
+        </ng-container>
+        <ng-container matColumnDef="noData">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            No data.
+          </mat-footer-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+     
+      </mat-table>
+  </div>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+  
+  
+  

@@ -1,0 +1,28 @@
+<img src="assets/img/login.png"  class="mx-auto d-block">
+<form [formGroup]="loginForm" *ngIf="loginForm" autocomplete="off" (submit)="onSubmit()">
+    <div class="form-group">
+      <label>اسم المستخدم</label>
+      <input type="text" class="form-control" placeholder="اسم المستخدم" formControlName="UserName" [class.is-invalid]="(submitted || f.UserName.touched) && f.UserName.errors">
+    <div class="text-danger" *ngIf="(submitted || f.UserName.touched) && f.UserName.errors">
+     من فضلك ادخل اسم المستخدم
+    </div>
+    </div>
+  
+    <div class="form-group">
+      <label>كلمة المرور</label>
+      <input type="password" placeholder="كلمة المرور" class="form-control" formControlName="Password" [class.is-invalid]="(submitted || f.Password.touched) && f.Password.errors">
+    <div class="text-danger" *ngIf="(submitted || f.Password.touched) && f.Password.errors">
+      <div *ngIf="f.Password.errors.required">
+         من فضلك ادخل كلمة المرور
+      </div>
+      <div *ngIf="f.Password.errors.minlength">
+      كلمة المرور لا يمكن ان تقل عن اربعه ارقام
+      </div>
+    </div>
+    </div>
+
+      <div class="form-group">
+        <input type="submit" class="btn btn-success" value="دخول">
+      </div>
+    
+  </form>
