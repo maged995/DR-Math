@@ -1,75 +1,244 @@
-<style>
 
 
-  @media print {
-    .print-only{
-              display: block;
-          }
+  <!-- Start Style -->
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #FAFAFA;
+      font-family: 'Cairo' !important;
+    }
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      padding: 20mm;
+      margin: 10mm auto;
+      border: 1px #1a0101 solid;
+      border-radius: 5px;
+      background: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .subpage {
+      margin: calc(50% - 27mm) auto;
+      background-color: #dbdcdc;
+      position: relative;
+      width: 86mm;
+      height: 54mm;
+      padding: 1mm;
+      border: 1px #dbdcdc solid;
+    }
+    @page {
+        size: A4;
+        margin: 0;
+    }
 
+    @media print {
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 20mm;
+      margin: 10mm auto;
+      border: 1px #1a0101 solid;
+      border-radius: 5px;
+      background: white;
+    }
+    .subpage {
+      margin: calc(50% - 27mm) auto;
+      position: relative;
+      background-color: #dbdcdc;
+      width: 86mm;
+      height: 54mm;
+      padding: 1mm;
+      border: 1px #dbdcdc solid;
+    }
+    .page {
+        display: block;
+      }
+    }
+  </style>
+    <!-- End Style -->
 
-  }
-  @media screen {
-    .print-only{
-              display: none;
-          }
+    <!-- Start Face To Print -->
+    <div id="demo1" class="page">
+      <div class="subpage">
+        <img src="../../../../../assets/cards/face1.jpg" alt=""
+          style="
+          max-width: 100%;
+          min-height: 100%;
+        ">
 
-
-  }
-
-    </style> 
-
-
-<div id="demo1" style="width: 10cm; height: 6cm;">
-
- 
-
-        <div  class="card  print-only " style="background-color: rgb(235, 231, 233); height: 30%;">
-        
-                <img style="width: 700px; height: 200px; padding: 20px; position: fixed; top: 5px; right: 5px;" src="/trainerapp/assets/cards/1.png">
-                <img style="width: 150px; height: 150px; vertical-align: middle; border-radius: 50%; padding: 4px; position: fixed; top: 80px; left:40px;" [src]="imageUrl">
-<div style="position: fixed; top:240px;left: 40px;font-size: 3rem;">
-<img style="height: 40px; width: 40px;" src="/trainerapp/assets/cards/SN.png">
-{{SubscriberCode}}
-</div>
-
-<div style="position: fixed; top:320px;left: 20px;">
-   <h2>رئيس مجلس الادارة </h2>
-   <img style="width: 120px; height: 50px; margin-left: 35px;" src="/trainerapp/assets/cards/Layer33.png">
-    </div>
+      <!-- Start Arabic Name -->
+        <div class="name-ar"
+          style="
+          position: absolute;
+          height: 24px;
+          width: 187px;
+          top: 60px;
+          left: 125px;
+          text-align: left;
+          overflow: hidden;
+          ">
+          <p
+            style="
+            margin: 0;
+            font-family: 'Cairo' !important;
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+          ">{{SubscriberNameAr}}</p>
         </div>
-                <div class="print-only"  style="background-image: url('/trainerapp/assets/cards/Layer34.png'); position: fixed; top: 200px; right: 5px; width: 70%;">
-                <h1 style="text-align: center;">{{SubscriberNameAr}}</h1>
-                <h3 style="text-align: center;">{{SubscriberNameEn}}</h3>
-                <img style="float: right;margin-right: 30px;  width: 80px; height: 80px; text-align: center;" src="/trainerapp/assets/cards/VectorSmartObjectcop_0.png">
-                <img style="float: right;margin-right: 120px;  width: 80px; height: 80px;" src="/trainerapp/assets/cards/VectorSmartObjectcop.png">
-                <img style="float: right;margin-right: 100px;  width: 80px; height: 80px;" src="/trainerapp/assets/cards/Layer37.png">
-                <img style="float: right;margin-right: 110px;  width: 80px; height: 80px;" src="/trainerapp/assets/cards/VectorSmartObjectcop_1.png">
-                <div style="border-left: 2px solid black; height: 120px; position: absolute; right: 180px;"></div>
-                <div style="border-left: 2px solid black; height: 120px; position: absolute; right: 370px;"></div>
-                <div style="border-left: 2px solid black; height: 120px; position: absolute; right: 550px;"></div>
-                <h3 style="clear: both; float: right;margin-right: 20px;  width: 150px; height: 80px; text-align: center;">{{GovernorateDesc}}</h3>
-                <h3 style="float: right;margin-right: 30px;  width: 150px; height: 80px; text-align: center;">{{BirthDate|date}}</h3>
-                <h3 style="float: right;margin-right: 30px;  width: 150px; height: 80px;">{{SubscriberDate|date}}</h3>
-            <h4 style="float: right;margin-right: 40px;  width: 130px; height: 80px;">{{TrainerName}}</h4>
-                </div>
-               
-    
+      <!-- End Arabic Name -->
 
- 
-</div>
+      <!-- Start English Name -->
+        <div class="name-en"
+          style="
+          position: absolute;
+          height: 24px;
+          width: 187px;
+          top: 83px;
+          left: 125px;
+          text-align: left;
+          overflow: hidden;
+          ">
+          <p
+            style="
+            margin: 0;
+            font-family: 'Cairo' !important;
+            font-size: 11px;
+            font-weight: 700;
+            color: #000;
+          ">{{SubscriberNameEn}}</p>
+        </div>
+      <!-- End English Name -->
+
+      <!-- Start Code -->
+        <div class="code"
+          style="
+          position: absolute;
+          height: 15px;
+          width: 30px;
+          top: 101px;
+          left: 59px;
+          text-align: left;
+          overflow: hidden;
+          ">
+          <p
+            style="
+            margin: 0;
+            font-family: 'Cairo' !important;
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.726);
+          ">{{SubscriberCode}}</p>
+        </div>
+      <!-- End Code -->
+
+      <!-- Start Governorate -->
+        <div class="Governorate"
+          style="
+          position: absolute;
+          height: 25px;
+          width: 50px;
+          top: 142px;
+          left: 251px;
+          text-align: center;
+          overflow: hidden;
+          ">
+          <p
+            style="
+            margin: 0;
+            font-family: 'Cairo' !important;
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.726);
+          ">{{GovernorateDesc}}</p>
+        </div>
+      <!-- End Governorate -->
+
+      <!-- Start SubscriberDate -->
+        <div class="Subscriber-Date"
+          style="
+          position: absolute;
+          height: 25px;
+          width: 65px;
+          top: 142px;
+          left: 177px;
+          text-align: center;
+          overflow: hidden;
+          ">
+          <p
+            style="
+            margin: 0;
+            font-family: 'Cairo' !important;
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.726);
+          ">{{SubscriberDate | date: 'dd-MM-yyyy'}}</p>
+        </div>
+      <!-- End SubscriberDate -->
+
+      <!-- Start SubscriberDate -->
+        <div class="Subscriber-Date"
+          style="
+          position: absolute;
+          height: 25px;
+          width: 77px;
+          top: 142px;
+          left: 95px;
+          text-align: center;
+          overflow: hidden;
+          ">
+          <p
+            style="
+            margin: 0;
+            font-family: 'Cairo' !important;
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.726);
+          ">{{TrainerName}}</p>
+        </div>
+      <!-- End SubscriberDate -->
 
 
-
-  <div id="demo2">
-    <div  class="print-only" style="display: block;
-    margin-left: auto;
-    
-    margin-right: auto;">
-      <img style="width: 100%; height: 50%;" src="/trainerapp/assets/cards/card.png">
+      </div>
     </div>
-  </div>
-  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo1"  class="btn btn-success btn-block" ngxPrint>طباعه وجه الكارنيه</button>
+    <!-- End Face To Print -->
 
-  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}" printSectionId="demo2"  class="btn btn-info btn-block" ngxPrint>طباعة ظهر الكارنيه</button>
+
+    <!-- Start Back To Print -->
+    <div id="demo2" class="page">
+      <div class="subpage"
+        style="
+          position: relative;
+        ">
+        <img src="../../../../../assets/cards/card.png" alt=""
+          style="
+          max-width: 100%;
+          min-height: 100%;
+        ">
+      </div>
+    </div>
+    <!-- End Back To Print -->
+
+
+
+    <!-- Start Button To Print -->
+  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}"
+    printSectionId="demo1"  class="btn btn-success btn-block" ngxPrint>
+    طباعه وجه الكارنيه
+  </button>
+
+  <button [useExistingCss]="useExistingCss" styleSheetFile="{{styleName}}"
+    printSectionId="demo2"  class="btn btn-info btn-block" ngxPrint>
+    طباعة ظهر الكارنيه
+  </button>
+    <!-- End Button To Print -->
 
 

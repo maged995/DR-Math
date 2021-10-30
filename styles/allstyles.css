@@ -11,7 +11,11 @@ pre {
 @font-face {
   font-family: "Assaf Font";
   src: local("Assaf Font"),
-    url(../src/assets/skins/lightgray/fonts/fonts/Assaf.ttf) format("truetype");
+    url(../src/assets/skins/lightgray/fonts/Assaf.ttf) format("truetype");
+
+  font-family: "Cairo";
+  src: local("Cairo"),
+    url(../src/assets/skins/lightgray/fonts/Cairo.ttf) format("truetype");
 
   font-family: "GE SS Two Medium";
   src: local("ArbFONTS-GE-SS-Two-Medium"),
